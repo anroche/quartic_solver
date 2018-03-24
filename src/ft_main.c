@@ -28,21 +28,30 @@ int main(int av, char **ac)
 		double	*ret;
 
 		
-		var[0] = atof(ac[0]);
-		var[1] = atof(ac[1]);
-		var[2] = atof(ac[2]);
-		var[3] = atof(ac[3]);
-		var[4] = atof(ac[4]);
+		var[0] = atof(ac[1]);
+		var[1] = atof(ac[2]);
+		var[2] = atof(ac[3]);
+		var[3] = atof(ac[4]);
+		var[4] = atof(ac[5]);
+
+
 	
 		ret = ft_solve_4(var);
 		i = -1;
-		while (i < 4)
-		{
-			printf("%f",ret[0]);
-			ft_putchar('\n');
-		}
+		ft_putstr("the real solutions of the equation:\n");
+		while (++i < 4)
+			printf("%d/ %f\n",i + 1,ret[i]);
 	}
 	else
-		ft_putstr("invalid equation");
+	{
+		ft_putstr("\nInvalid equation\n\n");
+		ft_putstr("The equation is of the form:\n");
+		ft_putstr("Ax4 + Bx3 + Cx2 + Dx + E = 0\n");
+		ft_putstr("You should send the value of A, B, C, D, E.\n");
+
+
+	}
+
+
 	return (0);
 }
